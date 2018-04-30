@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Image Sizes</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <style>
+            img {
+                border: 1px solid red;
+            }
+
+            .img-big {
+                width: 100%;
+            }
+
+            .img-medium {
+                width: 100%;
+            }
+
+            .img-small {
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 1200px) {
+                .myviewport:after {
+                    content: "large desktop";
+                }
+            }
+            @media only screen and (min-width: 992px) and (max-width: 1200px) {
+                .myviewport:after {
+                    content: "medium desktop";
+                }
+            }
+            @media only screen and (min-width: 768px) and (max-width: 992px) {
+                .myviewport:after {
+                    content: "md small desktop";
+                }
+            }
+            @media only screen and (min-width: 480px) and (max-width: 768px) {
+                .myviewport:after {
+                    content: "sm tablet";
+                }
+            }
+            @media only screen and (max-width: 480px) {
+                .myviewport:after {
+                    content: "xs-phone";
+                }
+            }
+        </style>
+
+        <div class="container">
+            <div class="row">
+                <span class="myviewport">VIEWPORT: </span><span> --- Ein grosses Bild</span>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/big/1200x300.png, ../img/big/1200x300-2x.png 2x">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/big/1200x300.png, ../img/big/1200x300-2x.png 2x">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/big/800x200.png, ../img/big/800x200-2x.png 2x">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/big/800x200.png, ../img/big/800x200-2x.png 2x ">
+                        <source media="(max-width: 480px)" srcset="../img/big/400x100.png, ../img/big/400x100-2x.png 2x">
+                        <img class="img-big" src="1200x300.png" alt="Ein Bild" />
+                    </picture>
+                </div>
+            </div>
+
+            <div class="row">
+                <span>2 halb breite Bilder</span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/medium/800x200ma.png">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/medium/800x200ma.png">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/medium/800x200ma.png">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/medium/800x200ma.png">
+                        <source media="(max-width: 480px)" srcset="../img/medium/400x100ma.png">
+
+                        <img class="img-medium" src="../img/medium/800x200ma.png" alt="Ein Bild" />
+                    </picture>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/medium/800x200mb.png">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/medium/800x200mb.png">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/medium/800x200mb.png">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/medium/800x200mb.png">
+                        <source media="(max-width: 480px)" srcset="../img/medium/400x100mb.png">
+
+                        <img class="img-medium" src="../img/medium/800x200mb.png" alt="Ein Bild" />
+                    </picture>
+                </div>
+            </div>
+            <div class="row">
+                <span>3 Bilder nebeneinander</span>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/small/400x100sa.png">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/small/400x100sa.png">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/small/400x100sa.png">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/small/800x200sa.png">
+                        <source media="(max-width: 480px)" srcset="../img/small/400x100sa.png">
+
+                        <img class="img-medium" src="../img/small/800x200sa.png" alt="Ein Bild" />
+                    </picture>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/small/400x100sb.png">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/small/400x100sb.png">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/small/400x100sb.png">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/small/800x200sb.png">
+                        <source media="(max-width: 480px)" srcset="../img/small/400x100sb.png">
+
+                        <img class="img-medium" src="../img/small/800x200sb.png" alt="Ein Bild" />
+                    </picture>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <picture>
+                        <source media="(min-width: 1200px)" srcset="../img/small/400x100sc.png">
+                        <source media="(min-width: 992px) and (max-width: 1200px)" srcset="../img/small/400x100sc.png">
+                        <source media="(min-width: 768px) and (max-width: 992px)" srcset="../img/small/800x200sc.png">
+                        <source media="(min-width: 480px) and (max-width: 768px)" srcset="../img/small/800x200sc.png">
+                        <source media="(max-width: 480px)" srcset="../img/small/400x100sc.png">
+
+                        <img class="img-medium" src="../img/small/800x200sc.png" alt="Ein Bild" />
+                    </picture>
+                </div>
+            </div>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <!--    <script
+						 src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
